@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu&display=swap');
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    color: rgb(217, 217, 217);
+    --bg-dark: rgba(1, 0, 66, 1);
+    --bg-light: hsl(241, 64%, 27%);
+}
+
+body {
+    color: #d7d7d7;
+    background-image: repeating-linear-gradient(to top left,var(--bg-light),var(--bg-light) 30%,var(--bg-dark) 30%,var(--bg-dark) 60%,var(--bg-light) 60%);
+}
+
+.btn {
+    padding: 0.5em 1.5em;
+    background-color: inherit;
+    /* color: hsl(255, 59%, 83%); */
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    border: none;
+    transition: all 0.1s linear;
+}
+
+.btn:hover {
+    transform: translateY(-5px)
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 2px;
+    opacity: 0;
+    height: calc(100% + 0.30em);
+    border-bottom: 2px solid #fff;
+    transition: all 0.2s linear;
+}
+
+.btn:hover::after {
+    opacity: 1;
+    transform: scaleX(50);
+}
