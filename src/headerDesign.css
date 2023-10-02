@@ -8,7 +8,7 @@
     padding: 0;
     box-sizing: border-box;
     outline: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
 }
 
 * {
@@ -23,7 +23,8 @@
 
 body {
     color: #d7d7d7;
-    background-image: repeating-linear-gradient(to top left,var(--bg-light),var(--bg-light) 30%,var(--bg-dark) 30%,var(--bg-dark) 60%,var(--bg-light) 60%);
+    background-image: repeating-linear-gradient(30deg,var(--bg-dark),var(--bg-dark) 20%,var(--bg-light) 30%,var(--bg-light) 50%,var(--bg-dark) 60%);
+    overflow-x: hidden;
 }
 
 .btn {
@@ -37,9 +38,6 @@ body {
     transition: all 0.1s linear;
 }
 
-.btn:hover {
-    transform: translateY(-5px)
-}
 
 .btn::after {
     content: "";
@@ -55,4 +53,43 @@ body {
 .btn:hover::after {
     opacity: 1;
     transform: scaleX(50);
+}
+
+.banner {
+    background: rgba(0, 0, 0, .65) url("banner.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-blend-mode: darken;
+    flex-direction: column;
+}
+
+.bannerText::before {
+    content: "";
+    background-image: url('./google.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 18rem;
+    height: 6rem;
+    display: inline-block;
+    position: relative;
+    top: 1.5rem;
+    right: 0.5rem;
+
+}
+
+.profilepic {
+    border-radius: 50%;
+    width: 15rem;
+    height: 15rem;
+    border-top: 0.5rem solid #da483b;
+    border-bottom: 0.5rem solid #ff9e0f;
+    border-left: 0.5rem solid #1ca45c;
+    border-right: 0.5rem solid #4486f4;
+    margin-top: 1rem;
 }

@@ -1,26 +1,25 @@
 import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-
+import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
+import { Avatar, Box, Button } from '@mui/material';
 
 export default function MediaCard({name, description, profile}) {
-  return (
-    <Card sx={{ maxWidth: 345, background: "linear-gradient(45deg, rgba(1, 0, 40, 1),hsl(241, 64%, 27%))", borderRadius: "1rem" }}>
-      <CardMedia
-        sx={{ height: 240 }}
-        image={profile}
-        title="green iguana"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {name}
-        </Typography>
-        <Typography variant="body2" color="inherit">
-          {description}
-        </Typography>
-      </CardContent>
-    </Card>
-  );
+    return (
+        <Box sx = {{display: "flex",margin: "2rem", paddingTop: "1rem", flexDirection: "column", textAlign:"center", justifyContent:"center", alignItems: "center"}}>
+            <Typography variant="body2" sx = {{fontSize:"3rem", fontWeight: 900, fontFamily: "poppins"}}>
+            {name}
+            </Typography>
+            <img src = {profile} className='profilepic' />
+            <Typography variant="inherit" color="inherit" sx = {{
+                fontStyle: "italic",
+                maxWidth: "50ch",
+                display :"flex", flexWrap: "wrap",
+                }}>
+                <FormatQuoteIcon  sx = {{fontSize: "4rem", transform: "rotate(180deg)"}}/> 
+                {description}
+            </Typography>
+            <Button variant='contained' sx = {{my: "1rem"}}>View profile</Button>
+
+        </Box>
+    )
 }
