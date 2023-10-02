@@ -1,64 +1,18 @@
+import Homepage from './Homepage'
 import './App.css';
 import './headerDesign.css'
-import Header from './Header';
-import Content from './content';
-import Footer from './footer';
-import { Container, CssBaseline, Box, Typography, Button, ButtonGroup } from '@mui/material';
-import GoogleIcon from './google.png'
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import UpcomingIcon from '@mui/icons-material/Upcoming';
-import AutoStoriesIcon from '@mui/icons-material/AutoStories';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LeaderBoard from './LeaderB';
+import Report from './Report';
 
-function App() {
+export default function App() {
     return (
-        <>
-            <CssBaseline />
-            <Header />
-            <Box className="banner">
-                <Typography className='bannerText' sx={{ fontFamily: "Poppins", fontSize: "4.5rem", fontWeight: "bold" }}> Cloud Study Jams</Typography>
-                <Box sx={{paddingTop: "1rem"}}>
-                    <Button
-                        size="large"
-                        startIcon={<LocationOnIcon />}
-                        sx={{
-                            border: "0.2rem solid #da483b",
-                            color: "#da483b",
-                            borderRadius: "1rem 0 0 1rem",
-                            width: "12rem",
-                            fontWeight: 700
-                        }}>IIEST, Shibpur
-                    </Button>
-                    <Button
-                        size="large"
-                        startIcon={<UpcomingIcon/>}
-                        sx={{
-                            border: "0.2rem solid #ff9e0f",
-                            color: "#ff9e0f",
-                            borderRadius: "0 0 0 0",
-                            width: "16rem",
-                            fontWeight: 700
-                        }}>Upcoming Events
-                    </Button>
-                    <Button
-                        size="large"
-                        startIcon={<AutoStoriesIcon />}
-                        sx={{
-                            border: "0.2rem solid #1ca45c",
-                            color: "#1ca45c",
-                            borderRadius: "0 1rem 1rem 0",
-                            width: "10rem",
-                            fontWeight: 700
-                        }}>Chapters
-                    </Button>
-                </Box>
-            </Box>
-            
-            <Content />
-            
-            <CssBaseline />
-            <Footer />
-        </>
+        <Router>
+            <Routes>
+                <Route exact path='/' element={<Homepage/>} />
+                <Route exact path="/LeaderBoard" element={<LeaderBoard />} />
+                <Route exact path="/Report" element={<Report />} />
+            </Routes>
+        </Router>
     )
 }
-
-export default App;
